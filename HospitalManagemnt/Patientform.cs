@@ -12,6 +12,8 @@ namespace HospitalManagemnt
 {
     public partial class Patientform : Form
     {
+
+        GlobalVariables global = new GlobalVariables();
         public Patientform()
         {
             InitializeComponent();
@@ -209,6 +211,75 @@ namespace HospitalManagemnt
             this.Hide();
             ControlForm Cf = new ControlForm();
             Cf.Show();
+        }
+
+        private void saveButton_Click_1(object sender, EventArgs e)
+        {
+            int ssnId = 0;
+            string patientFirstName = nameTextBox.Text;
+            string patientLastName = surnameTextBox.Text;
+            string gender = sexComboBox.Text;
+            string bloodType = comboBox_bloodgroup.Text;
+            string Seriousness = comboBox_Seriousness.Text;
+            string complaint = txtbx_Complaint.Text;
+            string AttendingDoctor = doctorComboBox.Text;
+            string Department = deptComboBox.Text;
+            string DOB = birth_dateDateTimePicker.Value.ToString("dd-MMM-yyyy");
+            string AppointmentDate = inspectionDateTimePicker.Value.ToString("dd-MMM-yyyy");
+            string PlaceOfBirth = birth_placeTextBox.Text;
+            string FatherName= father_nameTextBox.Text;
+            string Address = addressTextBox.Text;
+            string Phone = phoneTextBox.Text;
+
+
+            try
+            {
+                ssnId = int.Parse(ssnTextBox1.Text);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Enter Valid SSN Number.");
+            }
+            catch (IndexOutOfRangeException)
+            {
+                MessageBox.Show("No Entry Found");
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("Error" + ee);
+            }
+
+            try
+            {
+                String query = "Insert into PatientRecords(ssnId, PatientFirstName, PatientLastName, Gender, BloodType, Seriousness, Complaint, AttendingDoctor, DOB, PlaceOfBirth, FatherName, Phone, AppointmentDate, Department, Address) Values('" + ssnId + "','" + patientLastName + "','" + patientLastName + "','" + gender + "','" + bloodType + "','" + Seriousness + "','" + complaint + "','" + AttendingDoctor + "','" + DOB + "','" + PlaceOfBirth + "','" + FatherName + "','" + Phone + "','" + AppointmentDate + "','" + Department + "','" + Address + "')";
+
+                try
+                {
+                    if (global.newInsertSqlConnection(query))
+                    {
+                        MessageBox.Show("Submitted Successfully.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error, Process Failed.");
+                    }
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show("Error" + ee);
+                }
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show("" + ee);
+            }
+
+
+        }
+
+        private void birth_placeTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

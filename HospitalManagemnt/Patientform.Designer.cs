@@ -43,7 +43,7 @@
             this.step1TabPage = new System.Windows.Forms.TabPage();
             this.comboBox_bloodgroup = new System.Windows.Forms.ComboBox();
             this.comboBox_Seriousness = new System.Windows.Forms.ComboBox();
-            this.txt_Complaint = new System.Windows.Forms.TextBox();
+            this.txtbx_Complaint = new System.Windows.Forms.TextBox();
             this.doctorComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lbl_Complaint = new System.Windows.Forms.Label();
@@ -68,6 +68,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.birth_dateDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             surnameLabel = new System.Windows.Forms.Label();
             ssnLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
@@ -220,10 +221,11 @@
             // 
             // step1TabPage
             // 
+            this.step1TabPage.Controls.Add(this.button1);
             this.step1TabPage.Controls.Add(lbl_bloodgroup);
             this.step1TabPage.Controls.Add(this.comboBox_bloodgroup);
             this.step1TabPage.Controls.Add(this.comboBox_Seriousness);
-            this.step1TabPage.Controls.Add(this.txt_Complaint);
+            this.step1TabPage.Controls.Add(this.txtbx_Complaint);
             this.step1TabPage.Controls.Add(this.doctorComboBox);
             this.step1TabPage.Controls.Add(lbl_Seriousness);
             this.step1TabPage.Controls.Add(this.label3);
@@ -271,20 +273,21 @@
             this.comboBox_Seriousness.Size = new System.Drawing.Size(269, 41);
             this.comboBox_Seriousness.TabIndex = 159;
             // 
-            // txt_Complaint
+            // txtbx_Complaint
             // 
-            this.txt_Complaint.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_Complaint.Location = new System.Drawing.Point(844, 323);
-            this.txt_Complaint.Margin = new System.Windows.Forms.Padding(8);
-            this.txt_Complaint.Name = "txt_Complaint";
-            this.txt_Complaint.Size = new System.Drawing.Size(269, 41);
-            this.txt_Complaint.TabIndex = 157;
+            this.txtbx_Complaint.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtbx_Complaint.Location = new System.Drawing.Point(844, 430);
+            this.txtbx_Complaint.Margin = new System.Windows.Forms.Padding(8);
+            this.txtbx_Complaint.Multiline = true;
+            this.txtbx_Complaint.Name = "txtbx_Complaint";
+            this.txtbx_Complaint.Size = new System.Drawing.Size(269, 122);
+            this.txtbx_Complaint.TabIndex = 157;
             // 
             // doctorComboBox
             // 
             this.doctorComboBox.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.doctorComboBox.FormattingEnabled = true;
-            this.doctorComboBox.Location = new System.Drawing.Point(844, 386);
+            this.doctorComboBox.Location = new System.Drawing.Point(844, 344);
             this.doctorComboBox.Margin = new System.Windows.Forms.Padding(8);
             this.doctorComboBox.Name = "doctorComboBox";
             this.doctorComboBox.Size = new System.Drawing.Size(269, 41);
@@ -294,7 +297,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(623, 386);
+            this.label3.Location = new System.Drawing.Point(623, 344);
             this.label3.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(114, 34);
@@ -305,7 +308,7 @@
             // 
             this.lbl_Complaint.AutoSize = true;
             this.lbl_Complaint.Font = new System.Drawing.Font("Century Gothic", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Complaint.Location = new System.Drawing.Point(623, 328);
+            this.lbl_Complaint.Location = new System.Drawing.Point(623, 431);
             this.lbl_Complaint.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
             this.lbl_Complaint.Name = "lbl_Complaint";
             this.lbl_Complaint.Size = new System.Drawing.Size(164, 34);
@@ -454,6 +457,7 @@
             this.saveButton.TabIndex = 153;
             this.saveButton.Text = "SAVE";
             this.saveButton.UseVisualStyleBackColor = false;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click_1);
             // 
             // addressTextBox
             // 
@@ -491,6 +495,7 @@
             this.birth_placeTextBox.Name = "birth_placeTextBox";
             this.birth_placeTextBox.Size = new System.Drawing.Size(259, 41);
             this.birth_placeTextBox.TabIndex = 145;
+            this.birth_placeTextBox.TextChanged += new System.EventHandler(this.birth_placeTextBox_TextChanged_1);
             // 
             // deptComboBox
             // 
@@ -550,6 +555,16 @@
             this.birth_dateDateTimePicker.TabIndex = 143;
             this.birth_dateDateTimePicker.Value = new System.DateTime(2014, 12, 15, 0, 0, 0, 0);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(902, 610);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(123, 37);
+            this.button1.TabIndex = 162;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btn_Back_Click_1);
+            // 
             // Patientform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 32F);
@@ -587,7 +602,7 @@
         private System.Windows.Forms.Button checkButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox_Seriousness;
-        private System.Windows.Forms.TextBox txt_Complaint;
+        private System.Windows.Forms.TextBox txtbx_Complaint;
         private System.Windows.Forms.ComboBox doctorComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbl_Complaint;
@@ -605,5 +620,6 @@
         private System.Windows.Forms.Button saveButton;
         private System.Windows.Forms.ComboBox comboBox_bloodgroup;
         private System.Windows.Forms.ComboBox sexComboBox;
+        private System.Windows.Forms.Button button1;
     }
 }
